@@ -1,6 +1,7 @@
 package backend.joffre.model;
 
 
+import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,34 +12,24 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-import java.sql.Date;
-
-
 
 
 @Entity
-@Table(name = "usuariotienetipodecambio")
+@Table(name = "perfilxusuario")
 @Data
-public class UsuariotieneTipodeCambio {
+public class PerfilxUsuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	
 	String name;
+	Date fecha_creacion;
 	
-		
 	@JoinColumn(name = "fkidusuario", referencedColumnName = "id")
 	@ManyToOne
 	Usuario mUsuario;
 	
-	
-	@JoinColumn(name = "fkidtipodecambio", referencedColumnName = "id")
+	@JoinColumn(name = "fkperfil", referencedColumnName = "id")
 	@ManyToOne
-	TipodeCambio mTipodeCambio;
-	
-	@JoinColumn(name = "fkidmonedaorigen", referencedColumnName = "id")
-	@ManyToOne
-	MonedaOrigen mMonedaOrigen;
-	
-	Date fecha_creacion;
+	Perfil mPerfil;
 }

@@ -1,7 +1,5 @@
 package backend.joffre.model;
 
-
-
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,23 +16,19 @@ import lombok.Data;
 
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "perfil")
 @Data
-public class Usuario {
-
+public class Perfil {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	
 	String name;
 	
-	Double monto;
 	Date fecha_creacion;
-	@OneToMany(mappedBy = "mUsuario", fetch = FetchType.EAGER)
-	private transient Collection<UsuariotieneTipodeCambio> usuarioxtipodeCambio = new ArrayList<>();
-
-	@OneToMany(mappedBy = "mUsuario", fetch = FetchType.EAGER)
+	
+	@OneToMany(mappedBy = "mPerfil", fetch = FetchType.EAGER)
 	private transient Collection<PerfilxUsuario> perfilesxusuario = new ArrayList<>();
 	
-
 }
