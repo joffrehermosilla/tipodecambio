@@ -33,6 +33,7 @@ public class Usuario {
 	String abreviatura;
 		
 	Date creatAt;
+	
 	@OneToMany(mappedBy = "mUsuario", fetch = FetchType.EAGER)
 	private transient Collection<UsuariotieneTipodeCambio> usuarioxtipodeCambio = new ArrayList<>();
 
