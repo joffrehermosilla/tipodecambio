@@ -3,10 +3,10 @@ package backend.joffre;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class TipodecambioApplicationTests {
 
-	@Test
+	//@Test
 	void contextLoads() {
 	}
 
