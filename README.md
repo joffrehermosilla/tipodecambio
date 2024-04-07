@@ -1,4 +1,4 @@
-# gateway
+# tipo de Cambio
 
 ![Alt text](https://raw.githubusercontent.com/joffrehermosilla/authserver/master/src/main/resources/Diagrama%20.png)
 
