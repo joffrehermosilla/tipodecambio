@@ -14,13 +14,13 @@ public interface UsuarioService {
 
 	List<Usuario> buscarTodas();
 	
-	public Page<Usuario> buscarTodas(Pageable pageable);
+	Page<Usuario> buscarTodas(Pageable pageable);
 
-	public Iterable<Usuario> buscarTodas(Integer pageSize, Integer offset);
+    Iterable<Usuario> buscarTodas(Integer pageSize, Integer offset);
 
 	void guardar(Usuario usuario);
 
-	List saveAllUsuarios(List<Usuario> usuarios);
+	List<Usuario> saveAllUsuarios(List<Usuario> usuarios);
 
 	void actualiza(Usuario usuario);
 
@@ -33,5 +33,6 @@ public interface UsuarioService {
 	Usuario actualizarusuario(Usuario usuario);
 
 	Object guardarusuario(Usuario usuario);
-	public Iterable<Usuario> getAllUsuarios(Integer pageSize,Integer offset) ;
+	
+
 }

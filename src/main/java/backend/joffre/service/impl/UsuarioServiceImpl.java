@@ -12,27 +12,22 @@ import backend.joffre.model.Usuario;
 import backend.joffre.repository.UsuarioRepository;
 import backend.joffre.service.UsuarioService;
 
-
 @Service
-public class UsuarioServiceImpl implements UsuarioService{
+public class UsuarioServiceImpl implements UsuarioService {
 
-	
 	@Autowired
 	UsuarioRepository usuarioRepository;
-	
-	
+
 	@Override
 	public void inserta(Usuario usuario) {
 		// TODO Auto-generated method stub
-		
+		usuarioRepository.save(usuario);
 	}
-
-
 
 	@Override
 	public void guardar(Usuario usuario) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -44,19 +39,19 @@ public class UsuarioServiceImpl implements UsuarioService{
 	@Override
 	public void actualiza(Usuario usuario) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void elimina(Usuario Usuario) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void eliminar(int idUsuario) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -74,14 +69,13 @@ public class UsuarioServiceImpl implements UsuarioService{
 	@Override
 	public Page<Usuario> buscarTodas(Pageable pageable) {
 		// TODO Auto-generated method stub
-		return  null;
+		return null;
 	}
-	
-	@Override
-	 public Iterable<Usuario> buscarTodas(Integer pageSize,Integer offset) { 
-	        return usuarioRepository.findAll(PageRequest.of(offset,pageSize)); 
-	    } 
 
+	@Override
+	public Iterable<Usuario> buscarTodas(Integer pageSize, Integer offset) {
+		return usuarioRepository.findAll(PageRequest.of(offset, pageSize));
+	}
 
 	@Override
 	public List<Usuario> buscarTodas() {
@@ -89,21 +83,10 @@ public class UsuarioServiceImpl implements UsuarioService{
 		return usuarioRepository.findAll();
 	}
 
-
-
 	@Override
-	public List saveAllUsuarios(List<Usuario> usuarios) {
+	public List<Usuario> saveAllUsuarios(List<Usuario> usuarios) {
 		// TODO Auto-generated method stub
 		return usuarioRepository.saveAll(usuarios);
-	}
-
-
-
-	@Override
-	public Iterable<Usuario> getAllUsuarios(Integer pageSize, Integer offset) {
-		// TODO Auto-generated method stub
-		return usuarioRepository.findAll(PageRequest.of(offset,pageSize)); 
-    } ;
 	}
 
 }
