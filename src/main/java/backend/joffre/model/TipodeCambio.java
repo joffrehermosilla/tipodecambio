@@ -27,7 +27,7 @@ public class TipodeCambio {
 	
 	Double valorinicial;
 	Double valorfinal;
-	Date fecha_creacion;
+	Date creatAt;
 	
 	@OneToMany(mappedBy = "mTipodeCambio", fetch = FetchType.EAGER)
 	private transient Collection<UsuariotieneTipodeCambio> usuarioxtipodeCambio = new ArrayList<>();

@@ -23,7 +23,7 @@ public class PerfilxUsuario {
 	int id;
 	
 	String name;
-	Date fecha_creacion;
+	Date creatAt;
 	
 	@JoinColumn(name = "fkidusuario", referencedColumnName = "id")
 	@ManyToOne

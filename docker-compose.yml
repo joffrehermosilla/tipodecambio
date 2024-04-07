@@ -1,0 +1,34 @@
+version: '3.4'
+services:
+  plataforma_tipodecambio:
+    container_name: angular-cli
+    image: alucardaywalker/plataformaangular:${TAG:-latest}
+    build:
+      context: Angular-TypeScript
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - net
+  backend:
+    container_name: tipodecambio
+    image: alucardaywalker/tipodecambio:${TAG:-latest}
+    build:
+      context: Java-SpringBoot
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - net
+  jwt:
+    container_name: authserver
+    image: alucardaywalker/authserver:${TAG:-latest}
+    build:
+      context: Java-Authorization-Server
+    restart: always
+    ports:
+      - "8090:8090"
+    networks:
+      - net
+networks:
+  net:

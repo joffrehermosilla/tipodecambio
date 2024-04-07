@@ -28,8 +28,11 @@ public class Usuario {
 	
 	String name;
 	
-	Double monto;
-	Date fecha_creacion;
+	String pais;
+	
+	String abreviatura;
+		
+	Date creatAt;
 	@OneToMany(mappedBy = "mUsuario", fetch = FetchType.EAGER)
 	private transient Collection<UsuariotieneTipodeCambio> usuarioxtipodeCambio = new ArrayList<>();
 

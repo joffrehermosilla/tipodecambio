@@ -40,5 +40,5 @@ public class UsuariotieneTipodeCambio {
 	@ManyToOne
 	MonedaOrigen mMonedaOrigen;
 	
-	Date fecha_creacion;
+	Date creatAt;
 }
