@@ -2,9 +2,9 @@ package backend.joffre.service;
 
 import java.awt.print.Pageable;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.domain.Page;
-
 
 import backend.joffre.model.TipodeCambio;
 
@@ -13,14 +13,11 @@ public interface TipodeCambioService {
 	void inserta(TipodeCambio tipodeCambio);
 
 	List<TipodeCambio> buscarTodas();
-	
-	Page<TipodeCambio> buscarTodas(Pageable pageable);
-	
+
 	Iterable<TipodeCambio> buscarTodas(Integer pageSize, Integer offset);
-	
-	
-    Iterable<TipodeCambio> getAllTipodeCambio(Integer pageSize,Integer offset);
-    
+
+	Iterable<TipodeCambio> getAllTipodeCambio(Integer pageSize, Integer offset);
+
 	void guardar(TipodeCambio tipodeCambio);
 
 	TipodeCambio guardarTipodeCambio(TipodeCambio tipodeCambio);
@@ -31,7 +28,7 @@ public interface TipodeCambioService {
 
 	void eliminar(int idtipodeCambio);
 
-	TipodeCambio get(int tipodeCambioId);
+	Optional<TipodeCambio> get(int tipodeCambioId);
 
 	TipodeCambio actualizarTipodeCambio(TipodeCambio tipodeCambio);
 }

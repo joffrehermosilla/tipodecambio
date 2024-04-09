@@ -3,6 +3,7 @@ package backend.joffre.controller;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,7 +56,6 @@ public class UsuarioController {
 
 	@PostMapping(value = "/save")
 	public ResponseEntity<?> guardarususarios(@RequestBody Usuario usuario) {
-	
 
 		LOGGER.info("Existen errores");
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioservice.guardarusuario(usuario));
@@ -63,10 +63,10 @@ public class UsuarioController {
 
 	@GetMapping("/mostrarelcambio/{idUsuario}")
 	public ResponseEntity<?> mostrarUsuarios(@PathVariable int idUsuario) {
-		Usuario usuario = usuarioservice.get(idUsuario);
+		Optional<Usuario> usuario = usuarioservice.get(idUsuario);
 
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(usuario.getName() + " El Usuario hará su cambio en el Pais " + usuario.getId());
+				.body(usuario.get().getName() + " El Usuario hará su cambio en el Pais " + usuario.get().getPais());
 	}
 
 	@GetMapping("/all")
@@ -88,9 +88,9 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> updateusuarios(@PathVariable int idusuario, @RequestBody Usuario usuario) {
 
 		usuario.setId(idusuario);
-		Usuario usuarios = new Usuario();
+		Optional<Usuario> usuarios = Optional.ofNullable(new Usuario());
 		usuarios = usuarioservice.get(idusuario);
-		usuarios.setName(usuario.getName());
+		usuarios.get().setName(usuario.getName());
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioservice.actualizarusuario(usuario));
 

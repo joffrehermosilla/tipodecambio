@@ -1,9 +1,10 @@
 package backend.joffre.service;
 
-import java.awt.print.Pageable;
-import java.util.List;
 
-import org.springframework.data.domain.Page;
+import java.util.List;
+import java.util.Optional;
+
+
 
 import backend.joffre.model.Perfil;
 
@@ -16,8 +17,7 @@ public interface PerfilService {
 	void inserta(Perfil perfil);
 
 	List<Perfil> buscarTodas();
-	
-	Page<Perfil> buscarTodas(Pageable pageable);
+
 	
 	Iterable<Perfil> buscarTodas(Integer pageSize, Integer offset);
 	
@@ -36,7 +36,7 @@ public interface PerfilService {
 
 	void eliminar(int idperfil);
 	
-	Perfil get(int perfilid);
+	 Optional<Perfil> get(int perfilid);
 	
 	Perfil actualizarperfil(Perfil perfil);
 	

@@ -1,22 +1,17 @@
 package backend.joffre.service;
 
-
-import java.awt.print.Pageable;
 import java.util.List;
-
-import org.springframework.data.domain.Page;
+import java.util.Optional;
 
 import backend.joffre.model.Usuario;
 
 public interface UsuarioService {
-	
+
 	void inserta(Usuario usuario);
 
 	List<Usuario> buscarTodas();
-	
-	Page<Usuario> buscarTodas(Pageable pageable);
 
-    Iterable<Usuario> buscarTodas(Integer pageSize, Integer offset);
+	Iterable<Usuario> buscarTodas(Integer pageSize, Integer offset);
 
 	void guardar(Usuario usuario);
 
@@ -24,15 +19,14 @@ public interface UsuarioService {
 
 	void actualiza(Usuario usuario);
 
-	void elimina(Usuario Usuario);
+	void elimina(Optional<Usuario> optional);
 
 	void eliminar(int idUsuario);
-	
-	Usuario get(int usuarioId);
-	
+
+	Optional<Usuario> get(int usuarioId);
+
 	Usuario actualizarusuario(Usuario usuario);
 
 	Object guardarusuario(Usuario usuario);
-	
 
 }

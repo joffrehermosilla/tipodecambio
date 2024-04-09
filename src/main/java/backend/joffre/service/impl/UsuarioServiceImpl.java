@@ -1,10 +1,11 @@
 package backend.joffre.service.impl;
 
-import java.awt.print.Pageable;
+
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
+
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
@@ -20,57 +21,50 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public void inserta(Usuario usuario) {
-		// TODO Auto-generated method stub
+
 		usuarioRepository.save(usuario);
 	}
 
 	@Override
 	public void guardar(Usuario usuario) {
-		// TODO Auto-generated method stub
+		usuarioRepository.save(usuario);
 
 	}
 
 	@Override
 	public Usuario guardarusuario(Usuario usuario) {
-		// TODO Auto-generated method stub
+
 		return usuarioRepository.save(usuario);
 	}
 
 	@Override
 	public void actualiza(Usuario usuario) {
-		// TODO Auto-generated method stub
-
+		usuarioRepository.save(usuario);
 	}
 
 	@Override
-	public void elimina(Usuario Usuario) {
-		// TODO Auto-generated method stub
+	public void elimina(Optional<Usuario> optional) {
+		usuarioRepository.deleteAll();
 
 	}
 
 	@Override
 	public void eliminar(int idUsuario) {
-		// TODO Auto-generated method stub
-
+		usuarioRepository.deleteById(idUsuario);
 	}
 
 	@Override
-	public Usuario get(int usuarioId) {
+	public Optional<Usuario> get(int usuarioId) {
 		// TODO Auto-generated method stub
-		return null;
+		return usuarioRepository.findById(usuarioId);
 	}
 
 	@Override
 	public Usuario actualizarusuario(Usuario usuario) {
 		// TODO Auto-generated method stub
-		return null;
+		return usuarioRepository.save(usuario);
 	}
 
-	@Override
-	public Page<Usuario> buscarTodas(Pageable pageable) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Iterable<Usuario> buscarTodas(Integer pageSize, Integer offset) {
