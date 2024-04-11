@@ -11,14 +11,14 @@ import lombok.Data;
 @Data
 public class Rates {
 	@JsonAlias("USD")
-	private Double USD;
+	private Double usd;
 	@JsonAlias("EUR")
-	private Double EUR;
+	private Double eur;
 	@JsonAlias("JPY")
-	private Double JPY;
+	private Double jpy;
 	@JsonAlias("MXN")
-	private Double MXN;
+	private Double mxn;
 	@JsonAlias("PEN")
-	private Double PEN;
+	private Double pen;
 
 }
