@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import backend.joffre.model.TipodeCambio;
 import backend.joffre.model.feignDTO.ExchangeRate;
+import backend.joffre.model.feignDTO.Rates;
 import backend.joffre.repository.TipodeCambioRepository;
 import backend.joffre.service.TipodeCambioService;
 
@@ -30,7 +31,7 @@ public class TipodeCambioServiceImpl implements TipodeCambioService {
 	}
 
 	public ExchangeRate getExchangeRate() {
-		return userFeignClient.getTipodeCambio();
+		return userFeignClient.getTipodeCambioDolares();
 	}
 
 	@Override

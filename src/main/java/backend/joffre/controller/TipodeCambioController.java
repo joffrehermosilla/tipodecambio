@@ -4,6 +4,9 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.http.HttpStatus;
@@ -20,23 +23,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 import backend.joffre.model.Usuario;
 import backend.joffre.model.feignDTO.ExchangeRate;
+import backend.joffre.model.feignDTO.Rates;
 import backend.joffre.service.UsuarioService;
 import backend.joffre.service.impl.ApiServiceProxy;
 
 import jakarta.annotation.PostConstruct;
 
 @RestController
-@RequestMapping("/v6/latest/USD")
+@RequestMapping("/tipodecambio")
 @RequiredArgsConstructor
 //@EnableFeignClients(basePackageClasses = ApiServiceProxy.class)
 public class TipodeCambioController {
-
+	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	@Autowired
 	private ApiServiceProxy serviceproxy;
 
-	@GetMapping()
-	public ResponseEntity<ExchangeRate> getAll() {
-		return new ResponseEntity<>(serviceproxy.getTipodeCambio(), HttpStatus.OK);
+	@GetMapping("/dolares")
+	public ResponseEntity<ExchangeRate> getDolares() {
+
+		LOGGER.info("service externo : " + serviceproxy.getTipodeCambioDolares());
+		return new ResponseEntity<>(serviceproxy.getTipodeCambioDolares(), HttpStatus.OK);
 	}
 
 }
