@@ -3,7 +3,7 @@ package backend.joffre.controller;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.http.HttpStatus;
@@ -19,29 +19,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import backend.joffre.model.Usuario;
+import backend.joffre.model.feignDTO.ExchangeRate;
 import backend.joffre.service.UsuarioService;
 import backend.joffre.service.impl.ApiServiceProxy;
+
 import jakarta.annotation.PostConstruct;
 
 @RestController
-@RequestMapping("/tipodecambio")
-@EnableFeignClients(basePackageClasses = ApiServiceProxy.class)
-public class TipodeCambioController implements ApiServiceProxy {
+@RequestMapping("/v6/latest/USD")
+@RequiredArgsConstructor
+//@EnableFeignClients(basePackageClasses = ApiServiceProxy.class)
+public class TipodeCambioController {
 
+	@Autowired
 	private ApiServiceProxy serviceproxy;
 
-	@Override
-	@GetMapping("/v6/latest/USD")
-	public List<Object> getTipodeCambioDolares() {
-		// TODO Auto-generated method stub
-		return serviceproxy.getTipodeCambioDolares();
-	}
-
-	@Override
-	@GetMapping("/tipodecambioglobal")
-	public List<Object> getTipodeCambioWorlwide() {
-		// TODO Auto-generated method stub
-		return serviceproxy.getTipodeCambioWorlwide();
+	@GetMapping()
+	public ResponseEntity<ExchangeRate> getAll() {
+		return new ResponseEntity<>(serviceproxy.getTipodeCambio(), HttpStatus.OK);
 	}
 
 }

@@ -33,21 +33,16 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioservice;
 
-	@PostConstruct
-	public void createUsuarios() {
-		List<Usuario> usuarios = new ArrayList<>();
-		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-
-		for (int i = 3; i < 15; i++) {
-			Usuario usuario = new Usuario();
-			usuario.setId(i);
-			usuario.setName("usuarioID: +" + i);
-			usuario.setPais("Pais a disponer");
-			usuario.setCreatAt(timestamp);
-			usuarios.add(usuario);
-		}
-		usuarioservice.saveAllUsuarios(usuarios);
-	}
+	/*
+	 * @PostConstruct public void createUsuarios() { List<Usuario> usuarios = new
+	 * ArrayList<>(); Timestamp timestamp = new
+	 * Timestamp(System.currentTimeMillis());
+	 * 
+	 * for (int i = 3; i < 15; i++) { Usuario usuario = new Usuario();
+	 * usuario.setId(i); usuario.setName("usuarioID: +" + i);
+	 * usuario.setPais("Pais a disponer"); usuario.setCreatAt(timestamp);
+	 * usuarios.add(usuario); } usuarioservice.saveAllUsuarios(usuarios); }
+	 */
 
 	@GetMapping("/getAll/{offset}")
 	public Iterable<Usuario> getAllUsuarios(@RequestParam Integer pageSize, @PathVariable("offset") Integer offset) {

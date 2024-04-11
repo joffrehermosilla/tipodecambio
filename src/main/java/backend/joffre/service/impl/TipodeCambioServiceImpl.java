@@ -1,8 +1,9 @@
 package backend.joffre.service.impl;
 
 import org.springframework.stereotype.Service;
-
+import lombok.RequiredArgsConstructor;
 import backend.joffre.model.TipodeCambio;
+import backend.joffre.model.feignDTO.ExchangeRate;
 import backend.joffre.repository.TipodeCambioRepository;
 import backend.joffre.service.TipodeCambioService;
 
@@ -14,15 +15,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 
 @Service
+@RequiredArgsConstructor
 public class TipodeCambioServiceImpl implements TipodeCambioService {
 
 	@Autowired
 	TipodeCambioRepository tipodeCambioRepository;
 
+	private final ApiServiceProxy userFeignClient;
+
 	@Override
 	public void inserta(TipodeCambio tipodeCambio) {
 
 		tipodeCambioRepository.save(tipodeCambio);
+	}
+
+	public ExchangeRate getExchangeRate() {
+		return userFeignClient.getTipodeCambio();
 	}
 
 	@Override
