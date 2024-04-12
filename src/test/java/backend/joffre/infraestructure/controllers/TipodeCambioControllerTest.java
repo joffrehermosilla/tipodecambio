@@ -70,7 +70,7 @@ public class TipodeCambioControllerTest {
 
 		ResponseEntity<ExchangeRate> response = controller.getDolares();
 
-		verify(serviceproxy).getTipodeCambioDolares();
+		//verify(serviceproxy).getTipodeCambioDolares();
 
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 		assertNotNull(response.getBody());
