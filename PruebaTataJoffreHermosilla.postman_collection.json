@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "f9ccaa96-e48a-4827-8441-a33c7bae49ce",
+		"name": "PruebaTataJoffreHermosilla",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13314331"
+	},
+	"item": [
+		{
+			"name": "TokenJWT",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "client-app",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "code",
+							"value": "buf93cS3URfhW2gQqqyYNF6SKzsIgxs-iWcpMhRYP13QUl7rJfUs_U8o7o2PG4InOh4MgPgJN1vpQig6TfjTDJ1GlVqlHkarSmXcyZXRQlXq87rgLiywKssln2K-HY9P",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://127.0.0.1:8080/authorized",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8090/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8090",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/usuario/all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI3NDcyYWNlOC1jM2Y5LTRiM2UtOTYxOC1hZjczN2MyZGY0ZmQiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2ZmcmUiLCJhdWQiOiJjbGllbnQtYXBwIiwibmJmIjoxNzEyODIzNzYzLCJzY29wZSI6WyJyZWFkIiwib3BlbmlkIiwicHJvZmlsZSIsIndyaXRlIl0sImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA5MCIsImV4cCI6MTcxMjgyNDA2MywiaWF0IjoxNzEyODIzNzYzLCJqdGkiOiI1NDRmOTkzMy0wZjIwLTRjZjYtYmZhYS0xYjQwZjY4MzFlY2EifQ.cfA0_JtFOKRHiNm5UJ7xzh0zBYs4yshbfYlhchC-KXsyuAVp3B4f4qhCAOfyMoYmFUoAiQrvoaf9jj8lwORuyVNvCoZYeK5ik7GIurXmDGgP8N9EFGrgT45Tgu7uE3XKzykRfJBRjKvIInymEvd7Z-pZLqMhVssDG9Cux7K8_gXky2RGCKPuWUWV7GLOUvFwp34ynvLSozbVyPHSGTSykc44pejJVeFfId3KoxTzrZHov1ITabAEQUOg0w7yKOiUpKYFudd5VFf0i13ETACP8HjAgEGi3pRXw13OffDfs8UH0ysYBI1IeeyFg72etJxXVCbGaK6uofkQdLgkwcsrIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/usuario/all",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Primer Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "joffre",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8080/v6/latest/USD",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI3NDcyYWNlOC1jM2Y5LTRiM2UtOTYxOC1hZjczN2MyZGY0ZmQiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2ZmcmUiLCJhdWQiOiJjbGllbnQtYXBwIiwibmJmIjoxNzEyODIzNzYzLCJzY29wZSI6WyJyZWFkIiwib3BlbmlkIiwicHJvZmlsZSIsIndyaXRlIl0sImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA5MCIsImV4cCI6MTcxMjgyNDA2MywiaWF0IjoxNzEyODIzNzYzLCJqdGkiOiI1NDRmOTkzMy0wZjIwLTRjZjYtYmZhYS0xYjQwZjY4MzFlY2EifQ.cfA0_JtFOKRHiNm5UJ7xzh0zBYs4yshbfYlhchC-KXsyuAVp3B4f4qhCAOfyMoYmFUoAiQrvoaf9jj8lwORuyVNvCoZYeK5ik7GIurXmDGgP8N9EFGrgT45Tgu7uE3XKzykRfJBRjKvIInymEvd7Z-pZLqMhVssDG9Cux7K8_gXky2RGCKPuWUWV7GLOUvFwp34ynvLSozbVyPHSGTSykc44pejJVeFfId3KoxTzrZHov1ITabAEQUOg0w7yKOiUpKYFudd5VFf0i13ETACP8HjAgEGi3pRXw13OffDfs8UH0ysYBI1IeeyFg72etJxXVCbGaK6uofkQdLgkwcsrIw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/v6/latest/USD",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"v6",
+						"latest",
+						"USD"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
