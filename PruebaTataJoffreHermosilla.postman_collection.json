@@ -135,14 +135,14 @@
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8080/v6/latest/USD",
+			"name": "dolares feign client",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJraWQiOiI3NDcyYWNlOC1jM2Y5LTRiM2UtOTYxOC1hZjczN2MyZGY0ZmQiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2ZmcmUiLCJhdWQiOiJjbGllbnQtYXBwIiwibmJmIjoxNzEyODIzNzYzLCJzY29wZSI6WyJyZWFkIiwib3BlbmlkIiwicHJvZmlsZSIsIndyaXRlIl0sImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA5MCIsImV4cCI6MTcxMjgyNDA2MywiaWF0IjoxNzEyODIzNzYzLCJqdGkiOiI1NDRmOTkzMy0wZjIwLTRjZjYtYmZhYS0xYjQwZjY4MzFlY2EifQ.cfA0_JtFOKRHiNm5UJ7xzh0zBYs4yshbfYlhchC-KXsyuAVp3B4f4qhCAOfyMoYmFUoAiQrvoaf9jj8lwORuyVNvCoZYeK5ik7GIurXmDGgP8N9EFGrgT45Tgu7uE3XKzykRfJBRjKvIInymEvd7Z-pZLqMhVssDG9Cux7K8_gXky2RGCKPuWUWV7GLOUvFwp34ynvLSozbVyPHSGTSykc44pejJVeFfId3KoxTzrZHov1ITabAEQUOg0w7yKOiUpKYFudd5VFf0i13ETACP8HjAgEGi3pRXw13OffDfs8UH0ysYBI1IeeyFg72etJxXVCbGaK6uofkQdLgkwcsrIw",
+							"value": "eyJraWQiOiI1OWU0M2UzNS01YjAzLTQ1NjktOWZjNi00ZWUxYzQ1NTg4NzQiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJqb2ZmcmUiLCJhdWQiOiJjbGllbnQtYXBwIiwibmJmIjoxNzEyODkyMDQyLCJzY29wZSI6WyJyZWFkIiwib3BlbmlkIiwicHJvZmlsZSIsIndyaXRlIl0sImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6ODA5MCIsImV4cCI6MTcxMjg5MjM0MiwiaWF0IjoxNzEyODkyMDQyLCJqdGkiOiJlNDJlNmEyNi04ZmZiLTQzOWUtYmFhMC0xMzFhODE5ZDlhZWMifQ.ES2whveGkvWtRRTPtC72fE59QUG5j3t1MZrh4d7-OCpvUKyZnN6y4QU93EStDbNe2OXMT8YMeeBeEHY_suMzAYe8IvwaFqfDZfG8CKCbTTZ44Qjvk9q3SL0UawTaqBj6n79dfgZt_sVVh5sSdWo-KV5Hht58WT5Q_klrmquhT4wl3gtH8j7VPYUVMkue-M2CtoEE_pjsm7FWodXa1Jdk8SUbBDQyQIE98qS69Oj2xg61Oq83zxFKS3E2mb24sXYgNX-dujt5SJJjXESv94_zP66ilDVZhX6Ryepihg2JFjtCkoS26y-_08-GpkfMdV3SDSDEo1jUU0eTYjgP8ZCSGQ",
 							"type": "string"
 						}
 					]
@@ -150,7 +150,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8080/v6/latest/USD",
+					"raw": "http://127.0.0.1:8080/tipodecambio/dolares",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -160,9 +160,140 @@
 					],
 					"port": "8080",
 					"path": [
-						"v6",
-						"latest",
-						"USD"
+						"tipodecambio",
+						"dolares"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "soles feign client",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/tipodecambio/soles",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"tipodecambio",
+						"soles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pesos mex feign client",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/tipodecambio/pesosmex",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"tipodecambio",
+						"pesosmex"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "yenes feign client",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/tipodecambio/yenes",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"tipodecambio",
+						"yenes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "euros feign client",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/tipodecambio/euros",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"tipodecambio",
+						"euros"
 					]
 				}
 			},

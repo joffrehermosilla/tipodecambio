@@ -26,7 +26,7 @@ public interface TipodeCambioService {
 
 	void elimina(TipodeCambio tipodeCambio);
 
-	void eliminar(int idtipodeCambio);
+	void eliminar(int TipodeCambio);
 
 	Optional<TipodeCambio> get(int tipodeCambioId);
 

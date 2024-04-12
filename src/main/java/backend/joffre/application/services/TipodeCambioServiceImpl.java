@@ -6,6 +6,7 @@ import backend.joffre.application.usecases.TipodeCambioService;
 import backend.joffre.domain.feignDTO.ExchangeRate;
 import backend.joffre.domain.feignDTO.Rates;
 import backend.joffre.domain.models.TipodeCambio;
+import backend.joffre.infrastructure.adapters.FeignClientAbstractFactory;
 import backend.joffre.infrastructure.repositories.TipodeCambioRepository;
 
 import java.util.List;
@@ -17,7 +18,7 @@ import org.springframework.data.domain.PageRequest;
 
 @Service
 @RequiredArgsConstructor
-public class TipodeCambioServiceImpl implements TipodeCambioService {
+public class TipodeCambioServiceImpl extends FeignClientAbstractFactory implements TipodeCambioService  {
 
 	@Autowired
 	TipodeCambioRepository tipodeCambioRepository;

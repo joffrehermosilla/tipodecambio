@@ -16,5 +16,16 @@ public interface ApiServiceProxy {
 
 	@GetMapping(value = "USD", consumes = MediaType.APPLICATION_JSON_VALUE)
 	ExchangeRate getTipodeCambioDolares();
-
+	
+	@GetMapping(value = "PEN", consumes = MediaType.APPLICATION_JSON_VALUE)
+	ExchangeRate getTipodeCambioSoles();
+	
+	@GetMapping(value = "MXN", consumes = MediaType.APPLICATION_JSON_VALUE)
+	ExchangeRate getTipodeCambioPesosmexicanos();
+	
+	@GetMapping(value = "EUR", consumes = MediaType.APPLICATION_JSON_VALUE)
+	ExchangeRate getTipodeCambioEUROS();
+	
+	@GetMapping(value = "JPY", consumes = MediaType.APPLICATION_JSON_VALUE)
+	ExchangeRate getTipodeCambioYenes();
 }
